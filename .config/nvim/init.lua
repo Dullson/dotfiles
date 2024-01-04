@@ -190,15 +190,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -259,6 +250,16 @@ require('lazy').setup({
     opts = {
       style = 'night',
     },
+  },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    opts = {
+      ensure_installed = {
+       'pyright',
+        'mypy',
+        'black'
+      }
+    }
   }
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -611,6 +612,8 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
