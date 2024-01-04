@@ -256,7 +256,9 @@ require('lazy').setup({
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      style = 'night',
+    },
   }
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
