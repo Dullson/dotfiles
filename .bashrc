@@ -124,3 +124,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 if command -v starship &>/dev/null; then
     eval "$(starship init bash)"
 fi
+
+# fzf completion
+source /usr/share/doc/fzf/examples/completion.bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
