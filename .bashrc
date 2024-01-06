@@ -128,3 +128,13 @@ fi
 # fzf completion
 source /usr/share/doc/fzf/examples/completion.bash
 source /usr/share/doc/fzf/examples/key-bindings.bash
+
+export MARKPATH=$HOME/.marks
+export CDPATH=.:$MARKPATH/
+
+function mark {
+  mkdir -p $MARKPATH; ln -sr "$(pwd)" $MARKPATH/"@$1"
+}
+function unmark {
+  rm -i "$MARKPATH/@$1"
+}
