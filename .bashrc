@@ -118,4 +118,9 @@ fi
 
 PATH=~/.fly/bin:$PATH
 export DISPLAY=:0.0
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+if command -v starship &>/dev/null; then
+    eval "$(starship init bash)"
+fi
