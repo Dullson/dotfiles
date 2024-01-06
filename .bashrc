@@ -118,4 +118,4 @@ fi
 
 PATH=~/.fly/bin:$PATH
 export DISPLAY=:0.0
-alias dotfiles='/usr/bin/git --git-dir=/home/dullson/.dotfiles --work-tree=/home/dullson'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
