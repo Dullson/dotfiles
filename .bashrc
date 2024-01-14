@@ -143,3 +143,11 @@ function mark {
 function unmark {
   rm -i "$MARKPATH/@$1"
 }
+
+function varscan {
+    full_script=$(find . -name "*.script" -type f -exec cat {} \; | grep "^[^#]")
+    vars=$(echo "${full_script}" | grep -oP '(?<=\$\{).*?(?=\})' | sort -u)
+    inits=$(echo "${full_script}" | grep -oP '(?<=^).*?(?=\=)'| sort -u)
+    outr=$(echo "${full_script}" | grep -oP '(?<=^out\().*?(?=,)'| sort -u)
+    comm -23 <(echo "${vars}") <(echo "${inits}\n${outs}" | sort -u)
+}
