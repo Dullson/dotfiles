@@ -126,8 +126,13 @@ if command -v starship &>/dev/null; then
 fi
 
 # fzf completion
-source /usr/share/doc/fzf/examples/completion.bash
-source /usr/share/doc/fzf/examples/key-bindings.bash
+if [ -f /usr/share/doc/fzf/examples/completion.bash ]; then
+    source /usr/share/doc/fzf/examples/completion.bash
+fi
+if [ -f  /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
 
 export MARKPATH=$HOME/.marks
 export CDPATH=.:$MARKPATH/
